@@ -1,0 +1,54 @@
+@use "./global.scss" as *;
+
+nav {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  box-shadow: 0px 0px 5px 0px $dark-primary;
+  padding: 20px 0;
+  background-color: $secondary-color;
+  position: fixed;
+  top: 0;
+
+  .home-button {
+    color: $cherry;
+    font-size: 30px;
+    justify-content: flex-start;
+    text-decoration: underline;
+    font-family: "Playfair Display", serif;
+  }
+  a {
+    margin: 0 10px;
+    text-decoration: none;
+  }
+
+  .button-groups {
+    display: flex;
+    button {
+      align-items: center;
+      padding: 4px 10px;
+      border: none;
+      border-radius: 5px;
+      color: $dark-primary;
+      background-color: #6699cc;
+      cursor: pointer;
+      transition: all 0.8s;
+
+      span {
+        display: none;
+        color: $white;
+      }
+
+      &:hover {
+        box-shadow: 0px 0px 5px inset $black;
+        background-color: $cherry;
+        color: $white;
+
+        span {
+          display: block;
+        }
+      }
+    }
+  }
+}
