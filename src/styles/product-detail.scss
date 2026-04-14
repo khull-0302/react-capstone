@@ -1,1 +1,81 @@
+@use "./global.scss" as *;
 @import url("https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap");
+
+#loading {
+  // display: flex;
+  // justify-content: center;
+  // align-items: center;
+  top: 45%;
+  left: 45%;
+  transform: translate(-50%, -50%);
+  position: absolute;
+  color: $secondary-color;
+  font-size: 100px;
+}
+
+.product-detail-container {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  // justify-content: center;
+  align-items: center;
+  background-color: $primary-color;
+  #details {
+    color: $cherry;
+    text-decoration: underline;
+    font-family: "Playfair Display", serif;
+    font-size: 50px;
+    box-shadow: 0px 0px 5px 3px inset $white;
+    padding: 12px;
+    border-radius: 10px;
+    background-color: $dark-primary;
+  }
+  #back-to-home {
+    border-radius: 5px;
+    border: none;
+    padding: 6px;
+    background-color: $secondary-color;
+    color: white;
+
+    &:hover {
+      color: $white;
+      box-shadow: 0px 0px 5px 2px $white;
+      cursor: pointer;
+    }
+  }
+  #back-to-cart {
+    border-radius: 5px;
+    border: none;
+    padding: 6px;
+    background-color: $secondary-color;
+    color: white;
+
+    &:hover {
+      color: $white;
+      box-shadow: 0px 0px 5px 2px $white;
+      cursor: pointer;
+    }
+  }
+  .product-detail-card {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    width: 50%;
+    // align-items: center;
+    // width: 400px;
+    box-shadow: 0px 0px 5px 0px $dark-primary;
+    padding: 10px;
+    background-color: $white;
+    margin: 20px;
+    border-radius: 10px;
+    img {
+      align-self: center;
+    }
+    h1 {
+      align-self: center;
+    }
+    p {
+      font-size: large;
+    }
+  }
+}

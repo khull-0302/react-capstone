@@ -33,6 +33,7 @@
     font-weight: bold;
     padding: 5px;
   }
+
   button {
     color: $cherry;
     background-color: $primary-color;
@@ -43,6 +44,25 @@
       box-shadow: 0px 0px 5px $black;
       background-color: $cherry;
       color: $white;
+    }
+  }
+  .qty-controls {
+    display: flex;
+    // background-color: red;
+    padding-top: 5px;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    button {
+      background-color: white;
+    }
+    #increase {
+      font-size: 20px;
+      color: green;
+    }
+    #decrease {
+      font-size: 20px;
+      color: red;
     }
   }
 }
