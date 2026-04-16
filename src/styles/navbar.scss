@@ -2,6 +2,7 @@
 
 nav {
   width: 100%;
+  grid-row-start: 1;
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -25,9 +26,12 @@ nav {
 
   .button-groups {
     display: flex;
+    justify-content: center;
+    align-items: center;
     button {
       align-items: center;
-      padding: 4px 10px;
+      // padding: 4px 10px;
+
       border: none;
       border-radius: 5px;
       color: $dark-primary;
@@ -35,18 +39,23 @@ nav {
       cursor: pointer;
       transition: all 0.8s;
 
-      span {
-        display: none;
-        color: $white;
-      }
-
-      &:hover {
-        box-shadow: 0px 0px 5px inset $black;
-        background-color: $cherry;
-        color: $white;
+      .icon-hover-group {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 6px;
 
         span {
-          display: block;
+          opacity: 0;
+          color: $white;
+        }
+
+        svg:hover {
+          color: $white;
+
+          ~ span {
+            opacity: 1;
+          }
         }
       }
     }

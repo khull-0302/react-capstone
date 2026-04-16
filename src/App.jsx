@@ -6,6 +6,7 @@ import ContactPage from "./components/pages/ContactPage";
 import HomePage from "./components/pages/HomePage";
 import ProductsPage from "./components/pages/ProductsPage";
 import Navbar from "./components/NavBar";
+import Footer from "./components/Footer";
 import ProductDetail from "./components/pages/ProductDetail";
 import FavoritesProvider from "./components/CartProvider";
 
@@ -29,6 +30,7 @@ export default function App() {
               <Redirect from="/" to="/home" />
             </Switch>
           </div>
+          <Footer />
         </BrowserRouter>
       </FavoritesProvider>
     </div>

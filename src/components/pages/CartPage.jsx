@@ -3,33 +3,6 @@ import { useHistory } from "react-router-dom";
 import { useFavorites } from "../CartProvider";
 import ProductCard from "../ProductCard";
 
-// const FavoritesPage = () => {
-//   const { push } = useHistory();
-//   const { favorites } = useFavorites();
-
-//   return (
-//     <div className="cart-container">
-//       <h1>My Cart</h1>
-
-//       {favorites.length === 0 ? (
-//         <div>
-//           <p>No favorites yet</p>
-//           <button onClick={() => push("/products")}>Browse products</button>
-//         </div>
-//       ) : (
-//         <div className="product-wrapper">
-//           <span>
-//             <button onClick={() => push("/products")}>Browse products</button>
-//           </span>
-//           {favorites.map((product) => (
-//             <ProductCard key={product.id} product={product} />
-//           ))}
-//         </div>
-//       )}
-//     </div>
-//   );
-// };
-
 const FavoritesPage = () => {
   const { push } = useHistory();
   const { favorites } = useFavorites();

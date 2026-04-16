@@ -30,30 +30,34 @@
     border-radius: 10px;
     background-color: $dark-primary;
   }
-  #back-to-home {
-    border-radius: 5px;
-    border: none;
-    padding: 6px;
-    background-color: $secondary-color;
-    color: white;
+  .detail-buttons {
+    display: flex;
+    gap: 12px;
+    #back-to-home {
+      border-radius: 5px;
+      border: none;
+      padding: 6px;
+      background-color: $secondary-color;
+      color: white;
 
-    &:hover {
-      color: $white;
-      box-shadow: 0px 0px 5px 2px $white;
-      cursor: pointer;
+      &:hover {
+        color: $white;
+        box-shadow: 0px 0px 5px 2px $white;
+        cursor: pointer;
+      }
     }
-  }
-  #back-to-cart {
-    border-radius: 5px;
-    border: none;
-    padding: 6px;
-    background-color: $secondary-color;
-    color: white;
+    #back-to-cart {
+      border-radius: 5px;
+      border: none;
+      padding: 6px;
+      background-color: $secondary-color;
+      color: white;
 
-    &:hover {
-      color: $white;
-      box-shadow: 0px 0px 5px 2px $white;
-      cursor: pointer;
+      &:hover {
+        color: $white;
+        box-shadow: 0px 0px 5px 2px $white;
+        cursor: pointer;
+      }
     }
   }
   .product-detail-card {

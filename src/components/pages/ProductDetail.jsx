@@ -40,12 +40,14 @@ export default function ProductDetail() {
   return (
     <div className="product-detail-container">
       <h1 id="details">Details</h1>
-      <button id="back-to-home" onClick={() => push("/products")}>
-        Back to Products
-      </button>
-      <button id="back-to-cart" onClick={() => push("/cart")}>
-        Back to Cart
-      </button>
+      <div className="detail-buttons">
+        <button id="back-to-home" onClick={() => push("/products")}>
+          Back to Products
+        </button>
+        <button id="back-to-cart" onClick={() => push("/cart")}>
+          Back to Cart
+        </button>
+      </div>
       <div className="product-detail-card">
         <img src={product.image} alt={product.title} width="200" />
         <h1>{product.title}</h1>

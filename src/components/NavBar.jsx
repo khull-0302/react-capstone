@@ -12,27 +12,35 @@ export default function NavBar() {
       <div className="button-groups">
         <NavLink className="products-button" to="/products">
           <button>
-            <FontAwesomeIcon icon="fa-circle-plus" size="2x" />
-            <span>Products</span>
+            <div className="icon-hover-group">
+              <FontAwesomeIcon icon="fa-circle-plus" size="2x" />
+              <span>Products</span>
+            </div>
           </button>
         </NavLink>
         <NavLink className="about-button" to="/info">
           <button>
-            <FontAwesomeIcon icon="fa-circle-info" size="2x" />
-            <span>Info</span>
+            <div className="icon-hover-group">
+              <FontAwesomeIcon icon="fa-circle-info" size="2x" />
+              <span>Info</span>
+            </div>
             {/* Favorites ({favorites.length}) */}
           </button>
         </NavLink>
         <NavLink className="contact-button" to="/contact">
           <button>
-            <FontAwesomeIcon icon="fa-square-phone" size="2x" />
-            <span>Contact</span>
+            <div className="icon-hover-group">
+              <FontAwesomeIcon icon="fa-square-phone" size="2x" />
+              <span>Contact</span>
+            </div>
           </button>
         </NavLink>
         <NavLink className="cart-button" to="/cart">
           <button>
-            <FontAwesomeIcon icon="fa-cart-shopping" size="2x" />
-            <span>Cart</span>
+            <div className="icon-hover-group">
+              <FontAwesomeIcon icon="fa-cart-shopping" size="2x" />
+              <span>Cart</span>
+            </div>
             {/* Favorites ({favorites.length}) */}
           </button>
         </NavLink>

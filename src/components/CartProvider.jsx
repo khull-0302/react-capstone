@@ -8,7 +8,19 @@ const FavoritesProvider = ({ children }) => {
   const [favorites, setFavorites] = useState([]);
 
   const addFavorite = (product) => {
-    setFavorites((prev) => [...prev, product]);
+    setFavorites((prev) => {
+      const existing = prev.find((item) => item.id === product.id);
+
+      if (existing) {
+        return prev.map((item) =>
+          item.id === product.id
+            ? { ...item, quantity: (item.quantity || 1) + 1 }
+            : item
+        );
+      }
+
+      return [...prev, { ...product, quantity: 1 }];
+    });
   };
 
   const removeFavorite = (id) => {
@@ -19,12 +31,25 @@ const FavoritesProvider = ({ children }) => {
     return favorites.some((item) => item.id === id);
   };
 
-  const increaseQuantity = () => {
-    setQuantity((prev) => prev + 1);
+  const increaseQuantity = (id) => {
+    setFavorites((prev) =>
+      prev.map((item) =>
+        item.id === id ? { ...item, quantity: (item.quantity || 1) + 1 } : item
+      )
+    );
   };
 
-  const decreaseQuantity = () => {
-    setQuantity((prev) => (prev > 1 ? prev - 1 : 1));
+  const decreaseQuantity = (id) => {
+    setFavorites((prev) =>
+      prev.map((item) =>
+        item.id === id
+          ? {
+              ...item,
+              quantity: item.quantity > 1 ? item.quantity - 1 : 1,
+            }
+          : item
+      )
+    );
   };
 
   return (
