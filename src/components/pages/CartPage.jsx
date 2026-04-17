@@ -20,30 +20,33 @@ const FavoritesPage = () => {
       <h1>My Cart</h1>
 
       {favorites.length === 0 ? (
-        <div>
-          <p>No favorites yet</p>
+        <div className="empty-cart">
+          <p>No Products In Cart</p>
           <button onClick={() => push("/products")}>Browse products</button>
         </div>
       ) : (
         <div className="cart-content">
-          <div className="product-wrapper">
+          <div className="cart-header">
             <button id="cart-button" onClick={() => push("/products")}>
               Browse products
             </button>
-
-            {favorites.map((product) => (
-              <ProductCard
-                key={product.id}
-                product={product}
-                showQuantity={true}
-              />
-            ))}
           </div>
+          <div className="cart-main">
+            <div className="product-wrapper">
+              {favorites.map((product) => (
+                <ProductCard
+                  key={product.id}
+                  product={product}
+                  showQuantity={true}
+                />
+              ))}
+            </div>
 
-          <div className="cart-summary">
-            <h2>Order Summary</h2>
-            <p>Total: ${total}</p>
-            <button className="checkout-btn">Checkout</button>
+            <div className="cart-summary">
+              <h2>Order Summary</h2>
+              <p>Total: ${total}</p>
+              <button className="checkout-btn">Checkout</button>
+            </div>
           </div>
         </div>
       )}

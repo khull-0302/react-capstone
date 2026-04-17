@@ -13,5 +13,9 @@
     width: 100%;
     font-size: smaller;
     color: $dark-primary;
+    a {
+      text-decoration: none;
+      color: $dark-primary;
+    }
   }
 }
