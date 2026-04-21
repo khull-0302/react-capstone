@@ -4,10 +4,8 @@
   min-height: 100vh;
   display: flex;
   flex-direction: column;
-  // justify-content: center;
   align-items: center;
   background-color: $primary-color;
-  // overflow-y: scroll;
   .filter {
     display: flex;
     gap: 15px;
@@ -46,7 +44,6 @@
 }
 
 .products-wrapper {
-  // width: fit-content;
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;

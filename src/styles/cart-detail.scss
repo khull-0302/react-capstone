@@ -1,7 +1,6 @@
 @use "./global.scss" as *;
 
 .cart-container {
-  // min-height: 100vh;
   display: flex;
   flex-direction: column;
   background-color: $primary-color;
@@ -28,7 +27,6 @@
     background-color: $dark-primary;
     width: 30%;
     text-align: center;
-    // margin-left: 40px;
   }
   button {
     align-self: center;
@@ -48,7 +46,7 @@
 
   .cart-content {
     display: flex;
-    flex-direction: column; // ✅ stack header on top, main below
+    flex-direction: column;
     gap: 20px;
     .cart-header {
       display: flex;
@@ -57,21 +55,17 @@
     }
     .cart-main {
       display: flex;
-      // align-items: center;
       gap: 20px;
     }
   }
 
   .product-wrapper {
     display: flex;
-    // flex-direction: column;
     flex-wrap: wrap;
     align-items: center;
     justify-content: center;
     width: 70%;
-    // height: 100%;
     gap: 15px;
-    // border: 1px solid black;
     background: linear-gradient(to left, $primary-color, #000000);
     border-radius: 10px;
     margin-top: 5px;
@@ -79,7 +73,6 @@
       width: 200px;
     }
     #cart-button {
-      // width: 60%;
       width: 400px;
     }
   }
@@ -93,7 +86,6 @@
     border-radius: 10px;
     box-shadow: 0px 0px 10px inset $black;
     color: $white;
-    // position: sticky;
     top: 20px;
     margin-top: 10px;
 

@@ -1,4 +1,5 @@
 import { createContext, useState, useEffect, useContext } from "react";
+import { toast } from "react-toastify";
 
 const FavoritesContext = createContext();
 
@@ -21,10 +22,12 @@ const FavoritesProvider = ({ children }) => {
 
       return [...prev, { ...product, quantity: 1 }];
     });
+    toast.success("Added to cart 🛒");
   };
 
   const removeFavorite = (id) => {
     setFavorites((prev) => prev.filter((item) => item.id !== id));
+    toast.error("Removed from cart 🛒");
   };
 
   const isFavorite = (id) => {
@@ -51,6 +54,9 @@ const FavoritesProvider = ({ children }) => {
       )
     );
   };
+  const clearCart = () => {
+    setFavorites([]);
+  };
 
   return (
     <FavoritesContext.Provider
@@ -61,6 +67,7 @@ const FavoritesProvider = ({ children }) => {
         isFavorite,
         increaseQuantity,
         decreaseQuantity,
+        clearCart,
       }}
     >
       {children}

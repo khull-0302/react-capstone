@@ -18,12 +18,26 @@ export default function ContactPage() {
   };
 
   const handleSubmit = () => {
+    const { firstName, lastName, email, phone, state } = formData;
+
+    if (!firstName || !lastName || !email || !phone || !state) {
+      alert("You need to fill out all required fields.");
+      return;
+    }
+
     alert("Form submitted!");
+    setFormData({
+      firstName: "",
+      lastName: "",
+      email: "",
+      phone: "",
+      state: "",
+    });
   };
 
   return (
-    <div style={{ maxWidth: "500px", margin: "0 auto" }}>
-      <h1>Contact Page</h1>
+    <div className="contact-container">
+      <h1>Contact Us</h1>
 
       <form onSubmit={handleSubmit}>
         <div>

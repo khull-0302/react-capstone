@@ -9,6 +9,9 @@ import Navbar from "./components/NavBar";
 import Footer from "./components/Footer";
 import ProductDetail from "./components/pages/ProductDetail";
 import FavoritesProvider from "./components/CartProvider";
+import NotFoundPage from "./components/pages/NoPage";
+import { ToastContainer } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 
 import icons from "./assets/icons";
 icons();
@@ -17,6 +20,7 @@ export default function App() {
   return (
     <div className="app-container">
       <FavoritesProvider>
+        <ToastContainer position="top-right" autoClose={2000} />
         <BrowserRouter>
           <Navbar />
           <div className="main-page-container">
@@ -27,7 +31,8 @@ export default function App() {
               <Route path="/info" component={AboutPage} />
               <Route path="/products" component={ProductsPage} />
               <Route path="/product/:productId" component={ProductDetail} />
-              <Redirect from="/" to="/home" />
+              <Redirect exact from="/" to="/home" />
+              <Route component={NotFoundPage} />
             </Switch>
           </div>
           <Footer />

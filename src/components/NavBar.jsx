@@ -1,9 +1,7 @@
 import { NavLink } from "react-router-dom/cjs/react-router-dom.min";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-// import { useFavorites } from "./FavoritesProvider";
 
 export default function NavBar() {
-  // const { favorites } = useFavorites();
   return (
     <nav>
       <NavLink className="home-button" to="/home">
@@ -24,7 +22,6 @@ export default function NavBar() {
               <FontAwesomeIcon icon="fa-circle-info" size="2x" />
               <span>Info</span>
             </div>
-            {/* Favorites ({favorites.length}) */}
           </button>
         </NavLink>
         <NavLink className="contact-button" to="/contact">
@@ -41,7 +38,6 @@ export default function NavBar() {
               <FontAwesomeIcon icon="fa-cart-shopping" size="2x" />
               <span>Cart</span>
             </div>
-            {/* Favorites ({favorites.length}) */}
           </button>
         </NavLink>
       </div>
