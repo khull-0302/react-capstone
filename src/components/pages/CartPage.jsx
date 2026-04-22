@@ -64,7 +64,12 @@ const CartPage = () => {
           </div>
         </div>
       )}
-      <Modal isOpen={isOpen} onRequestClose={() => setIsOpen(false)}>
+      <Modal
+        className="modal"
+        overlayClassName="modal-overlay"
+        isOpen={isOpen}
+        onRequestClose={() => setIsOpen(false)}
+      >
         <h2>Confirm Checkout</h2>
         <p>Your total is: ${total}</p>
         <p>Are you sure you want to continue?</p>
