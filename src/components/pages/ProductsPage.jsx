@@ -1,10 +1,12 @@
 import { useState, useEffect } from "react";
 import ProductCard from "../ProductCard";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
 export default function ProductsPage() {
   const [products, setProducts] = useState([]);
   const [category, setCategory] = useState("all");
   const [filterBy, setFilterBy] = useState("");
+  const [loading, setLoading] = useState(true);
 
   const filteredProducts = products
     .filter((p) => category === "all" || p.category === category)
@@ -22,13 +24,26 @@ export default function ProductsPage() {
     });
 
   useEffect(() => {
-    fetch("https://fakestoreapi.com/products")
-      .then((res) => res.json())
-      .then((data) => {
+    const fetchProducts = async () => {
+      try {
+        const res = await fetch("https://fakestoreapi.com/products");
+        const data = await res.json();
         setProducts(data);
-        console.log(data);
-      });
+      } finally {
+        setLoading(false);
+      }
+    };
+
+    fetchProducts();
   }, []);
+
+  if (loading)
+    return (
+      <h2>
+        <FontAwesomeIcon id="loading" icon="fa-circle-notch" spin size="2x" />
+      </h2>
+    );
+
   return (
     <div className="products-container">
       <h1>Products Page</h1>

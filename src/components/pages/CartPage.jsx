@@ -5,7 +5,7 @@ import { useFavorites } from "../CartProvider";
 import ProductCard from "../ProductCard";
 import Modal from "react-modal";
 
-const FavoritesPage = () => {
+const CartPage = () => {
   const { push } = useHistory();
   const { favorites, clearCart } = useFavorites();
   const [isOpen, setIsOpen] = useState(false);
@@ -64,11 +64,7 @@ const FavoritesPage = () => {
           </div>
         </div>
       )}
-      <Modal
-        isOpen={isOpen}
-        onRequestClose={() => setIsOpen(false)}
-        // ariaHideApp={false}
-      >
+      <Modal isOpen={isOpen} onRequestClose={() => setIsOpen(false)}>
         <h2>Confirm Checkout</h2>
         <p>Your total is: ${total}</p>
         <p>Are you sure you want to continue?</p>
@@ -81,4 +77,4 @@ const FavoritesPage = () => {
   );
 };
 
-export default FavoritesPage;
+export default CartPage;
